@@ -1,0 +1,73 @@
+
+def homeCentralMiles():
+        x = int(input("Please enter the amount of miles from home to the central location: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the amount of miles from home to the central location: "))
+        return x
+def centralWorkMiles():
+        x = int(input("Please enter the miles per day from the central location to work: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the miles per day from the central location to work: "))
+        return x
+def homeWorkMiles():
+        x = int(input("Please enter the miles per day from home to work: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the miles per day from home to work: "))
+        return x
+def costGallon():
+        x = int(input("Please enter the cost of a gallon of fuel: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the cost of a gallon of fuel: "))
+        return x
+def milesGallon():
+        x = int(input("Please enter the amount of miles per gallon of fuel: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the amount of miles per gallon of fuel: "))
+        return x
+def dailyParkFeeCentral():
+        x = int(input("Please enter the daily parking fee at the central location: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the daily parking fee at the central location: "))
+        return x
+def tollsHomeToCentral():
+        x = int(input("Please enter the number of tolls per day from home to the central location: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the number of tolls per day from home to the central location: "))
+        return x
+def tollsCentralToWork():
+        x = int(input("Please enter the number of tolls per day from the central location to work: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the number of tolls per day from the central location to work: "))
+        return x
+def tollsHomeToWork():
+        x = int(input("Please enter the number of tolls per day from home to work: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the number of tolls per day from home to work: "))
+        return x
+def parkingFeeNotCarpooling():
+        x = int(input("Please enter the parking fee at work if not carpooling: "))
+        while x < 0:
+                x = int(input("Invalid input, must be greater than 0. \nPlease enter the parking fee at work if not carpooling: "))
+        return x
+
+def costCarpool():
+        x = ((homeCentralMiles() * 10) + (centralWorkMiles() * 2)) / (costGallon() * milesGallon()) + (dailyParkFeeCentral() * 4) + (tollsHomeToCentral() * 10) + (tollsCentralToWork() * 2)
+        print("\nThe total cost, per week, to carpool is $", "%.2f" % x)
+        print("The total cost, per year, to carpool is $", "%.2f" % (x * 50))
+
+def costNoCarpool():
+        x = ((homeWorkMiles() * 10) / (costGallon() * milesGallon()) + (tollsHomeToWork() * 10) + (parkingFeeNotCarpooling() * 5))
+        print("\nThe total cost, per week, not carpooling is $", "%.2f" % x)
+        print("The total cost, per year, not carpooling is $", "%.2f" % (x * 50))
+
+#def costCarpoolYear():
+ #       x = costCarpoolWeek() * 50
+  #      print("The total cost, per year, to carpool is $", x,)
+
+
+#def costNoCarpoolYear():
+
+costCarpool()
+print("\n\n")
+costNoCarpool()
+#costCarpoolYear()
